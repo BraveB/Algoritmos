@@ -1,6 +1,3 @@
-const parseMoves = (game) => game.slice(9, -1).split("],[")
-            .map(move => move.replace(/\[|\]/g, '').split(',').map(Number));
-
 const checkWinner = (board, player) => {
     for (let i = 0; i < 3; i++) {
         if ((board[i][0] === player && board[i][1] === player && board[i][2] === player) ||
@@ -34,8 +31,8 @@ const determineWinner = (gameMoves) => {
 
 // Test cases
 // Output: "A"
-console.log(determineWinner('moves = [[0,0],[2,0],[1,1],[2,1],[2,2]]')); 
+console.log(determineWinner('[[0,0],[2,0],[1,1],[2,1],[2,2]]')); 
 // Output: "B"
-console.log(determineWinner('moves = [[0,0],[1,1],[0,1],[0,2],[1,0],[2,0]]'));
+console.log(determineWinner('[[0,0],[1,1],[0,1],[0,2],[1,0],[2,0]]'));
 // Output: "Draw"
-console.log(determineWinner('moves = [[0,0],[1,1],[2,0],[1,0],[1,2],[2,1],[0,1],[0,2],[2,2]]'));
+console.log(determineWinner('[[0,0],[1,1],[2,0],[1,0],[1,2],[2,1],[0,1],[0,2],[2,2]]'));
